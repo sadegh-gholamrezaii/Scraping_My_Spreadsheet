@@ -227,8 +227,11 @@ class TempInfo():
                     break
         if self.type_input == ".xlsx":
             content = self.content_before # the content before is processed by the openpyxl and no need to process it again
-            for i in range(0,len(content),3):
-                if content[i].value != None and content[i+1].value != None: 
+            #print(content)
+            for i in range(3,len(content),3):
+                _dstruct1 = datetime(year=2000,month=1,day=1)
+                if content[i].value != None and content[i+1].value != None:
+                    #print(content[i].value , content[i+1].value)
                     _dstruct1 = datetime.combine(content[i].value,content[i+1].value)
                     
                     
